@@ -34,3 +34,28 @@ dependencies {
             'com.sun.xml.bind:jaxb-impl:2.2.7'
     )
 }
+
+task jaxb {
+    System.setProperty('javax.xml.accessExternalSchema', 'all')
+    def jaxbTargetDir = file("src/generated-sources/java")
+
+    doLast {
+        jaxbTargetDir.mkdirs()
+
+        ant.taskdef(
+                name: 'xjc',
+                classname: 'com.sun.tools.xjc.XJCTask',
+                classpath: configurations.jaxb.asPath
+        )
+
+        ant.jaxbTargetDir = jaxbTargetDir
+
+        ant.xjc(
+                destdir: '${jaxbTargetDir}',
+                package: 'com.jeejava.jaxb',
+                schema: 'src/main/resources/xsd/user.xsd'
+        )
+    }
+}
+
+compileJava.dependsOn jaxb
