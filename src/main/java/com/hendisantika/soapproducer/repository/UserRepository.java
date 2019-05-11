@@ -41,7 +41,7 @@ public class UserRepository {
         u2.setName("Uchiha Sasuke");
         u2.setEmail("uchiha_sasuke@email.com");
         Address a2 = new Address();
-        a2.setStreet("Birati");
+        a2.setStreet("Konohagakure");
         a2.setCity("Konohagakure");
         a2.setState("KNH");
         a2.setCountry("Jepang");
