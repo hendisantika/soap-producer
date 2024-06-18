@@ -1,5 +1,5 @@
 plugins {
-    id 'org.springframework.boot' version '3.2.9'
+    id 'org.springframework.boot' version '3.3.0'
     id 'java'
 }
 
@@ -7,14 +7,14 @@ apply plugin: 'io.spring.dependency-management'
 
 group = 'com.hendisantika'
 version = '0.0.1-SNAPSHOT'
-sourceCompatibility = '17'
+sourceCompatibility = '21'
 
 repositories {
     mavenCentral()
 }
 
-sourceCompatibility = 17
-targetCompatibility = 17
+sourceCompatibility = 21
+targetCompatibility = 21
 
 sourceSets.main.java.srcDirs "src/generated-sources/java"
 sourceSets.main.resources.excludes = ['user.xsd']
